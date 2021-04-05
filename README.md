@@ -1,6 +1,6 @@
 
 ### Project Name :
-Hurray Rider
+Ajker-Bazar
 
 ### Project Features :
 1. Home page => Where dynamic data show and have a button and when the button click show Destination page 
