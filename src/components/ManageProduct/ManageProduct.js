@@ -42,7 +42,7 @@ const ManageProduct = () => {
                     <span class="visually-hidden">Loading...</span></div>
 
             }
-            <table class="table">
+            <table class="table table-hover  table-borderless table-striped ">
                 <thead>
                     <tr>
                         <th scope="col">Product Name</th>

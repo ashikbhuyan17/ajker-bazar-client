@@ -25,12 +25,12 @@ const ShowProduct = ({ product }) => {
         //     </div>
         // </div>
         <div>
-            
+
             <div className="productItem">
                 <img src={product.imageURL} alt="" />
-                <h2>{product.name}</h2>
+                <h6>{product.name}</h6>
                 <div style={{ display: 'flex', justifyContent: "space-between" }}>
-                    <h4>${product.price}</h4>
+                    <h4 class="my-2">${product.price}</h4>
                     <button style={{ color: '#fff', background: '#72BA59', border: 'none', borderRadius: '5px' }} onClick={() => buyNowHandler(product._id)}>Buy Now</button>
                 </div>
             </div>

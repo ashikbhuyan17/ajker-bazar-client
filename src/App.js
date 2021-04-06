@@ -11,6 +11,7 @@ import PrivateRoute from "./components/privateRoute/PrivateRoute";
 import AddProduct from "./components/AddProduct/AddProduct";
 // import Admin from "./components/Admin/Admin";
 import ManageProduct from "./components/ManageProduct/ManageProduct";
+import NoMatch from "./components/NoMatch/NoMatch";
 
 
 export const UserContext = createContext()
@@ -28,10 +29,10 @@ function App() {
                     <Route exact path="/">
                         <Home />
                     </Route>
-                    <Route exact path="/home">
+                    <Route path="/home">
                         <Home />
                     </Route>
-                    <Route exact path="/header">
+                    <Route path="/header">
                         <Header />
                     </Route>
                     <PrivateRoute path="/orders">
@@ -49,12 +50,15 @@ function App() {
                     <Route path="/deals">
                         <Deals />
                     </Route>
-                    <Route path="/login">
-                        <Login />
-                    </Route>
                     <PrivateRoute path="/checkOut/:id">
                         <CheckOut />
                     </PrivateRoute>
+                    <Route path="/login">
+                        <Login />
+                    </Route>
+                    <Route path="*">
+                        <NoMatch />
+                    </Route>
                 </Switch>
             </Router>
         </UserContext.Provider>
