@@ -40,26 +40,32 @@ const Header = () => {
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div
-                            class="collapse navbar-collapse justify-content-end"
+                            class="collapse navbar-collapse justify-content-end "
                             id="navbarNavAltMarkup"
                         >
-                            <div class="navbar-nav ">
-                                <Link to="/home" class="nav-link active">
+                            <div class="navbar-nav  ">
+                                <Link to="/home" class="nav-link active mx-3">
                                     <h4>Home</h4>
                                 </Link>
 
-                                <Link to="/orders" class="nav-link active">
+                                <Link to="/orders" class="nav-link active mx-3">
                                     <h4>Orders</h4>
                                 </Link>
 
-                                <Link to="/admin" class="nav-link active">
+                                <Link to="/admin" class="nav-link active mx-3 ">
                                     <h4>Admin</h4>
                                 </Link>
-                                <Link to="/deals" class="nav-link active">
+                                <Link to="/deals" class="nav-link active mx-3">
                                     <h4>Deals</h4>
                                 </Link>
                                 {
-                                    loggedInUser.email ? <img src={loggedInUser.photoURL} alt="Avatar" class="avatar my-1"></img> : <Link to="/login" class="nav-link active"><h4>Login</h4></Link>
+                                    loggedInUser.email ? <img src={loggedInUser.photoURL} alt="Avatar" class="avatar mx-3"></img>
+                                        : <Link to="/login" class="nav-link mx-3 bg-danger text-dark extra"><h4>Login</h4></Link>
+
+                                }
+                                {
+                                    loggedInUser.email ? <Link onClick={() => setLoggedInUser({})} class="nav-link mx-3 bg-danger text-dark extra2"><h4>LogOut</h4></Link>
+                                        : <p></p>
 
                                 }
                             </div>

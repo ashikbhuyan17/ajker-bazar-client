@@ -2,3 +2,39 @@
     background-color: rgba(0, 0, 255, 0.393);
     
 } */
+
+@media only screen and (min-width: 600px){
+    .extra{
+        margin: auto;
+        background-color: aquamarine;
+        text-align: center;
+        
+    }
+}
+@media only screen and (min-width: 300px){
+    .extra{
+        margin: auto;
+        background-color: aquamarine;
+        text-align: center;
+        
+    }
+}
+@media only screen and (min-width: 900){
+    .extra{
+        text-align: center;
+        
+    }
+}
+
+
+
+
+@media only screen and (max-width: 970px){
+    .extra2{
+        text-align: center;
+        margin-top: 15px;
+        
+    }
+}
+
+
