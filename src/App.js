@@ -9,7 +9,7 @@ import CheckOut from "./components/CheckOut/CheckOut";
 import { createContext, useState } from "react";
 import PrivateRoute from "./components/privateRoute/PrivateRoute";
 import AddProduct from "./components/AddProduct/AddProduct";
-import Admin from "./components/Admin/Admin";
+// import Admin from "./components/Admin/Admin";
 import ManageProduct from "./components/ManageProduct/ManageProduct";
 
 
@@ -40,12 +40,12 @@ function App() {
                     <PrivateRoute path="/admin">
                         <AddProduct />
                     </PrivateRoute>
-                    <Route path="/addProduct">
+                    <PrivateRoute path="/addProduct">
                         <AddProduct />
-                    </Route>
-                    <Route path="/manageProduct">
+                    </PrivateRoute>
+                    <PrivateRoute path="/manageProduct">
                         <ManageProduct />
-                    </Route>
+                    </PrivateRoute>
                     <Route path="/deals">
                         <Deals />
                     </Route>

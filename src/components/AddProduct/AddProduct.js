@@ -8,7 +8,7 @@ import Admin from "../Admin/Admin";
 const AddProduct = () => {
     const { register, handleSubmit, watch, errors } = useForm();
     const [imageURL, setImageURL] = useState(null);
-    const onSubmit = (data) => {
+    const onSubmit = (data, e) => {
         console.log(data)
         const eventDta = {
             name: data.name,
@@ -17,7 +17,7 @@ const AddProduct = () => {
             imageURL: imageURL
         };
         console.log(eventDta)
-        const url = `http://localhost:9000/addProduct`
+        const url = `https://boiling-spire-94969.herokuapp.com/addProduct`
         fetch(url, {
             method: 'POST',
             headers: {
@@ -26,7 +26,8 @@ const AddProduct = () => {
             body: JSON.stringify(eventDta)
         })
             .then(res => {
-                window.location.reload()
+                // window.location.reload()
+                e.target.reset()
             })
     };
     const handleImageUpload = event => {

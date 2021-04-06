@@ -1,9 +1,9 @@
 
 import React, { useContext, useState } from 'react';
-import { Form, FormControl, Button } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import { UserContext } from '../../App';
 import '../Orders/Order.css'
+import './Header.css'
 
 
 const Header = () => {
@@ -18,8 +18,8 @@ const Header = () => {
     console.log(loggedInUser);
     return (
         <div>
-            <div className="header">
-                <nav class="navbar navbar-expand-lg navbar-light ">
+            <div >
+                <nav class="navbar navbar-expand-lg  navbar-dark   bg-dark ">
                     <div class="container-fluid">
                         <Link
                             to="/home"

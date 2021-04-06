@@ -6,7 +6,7 @@ import Edit from '../icons/edit.png'
 const ManageProduct = () => {
     const [product, setProduct] = useState([])
     useEffect(() => {
-        fetch('http://localhost:9000/booking')
+        fetch('https://boiling-spire-94969.herokuapp.com/booking')
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
@@ -16,7 +16,7 @@ const ManageProduct = () => {
     function deleteProduct(id, event) {
         // const hidden = 
         console.log("delete", id)
-        fetch(`http://localhost:9000/delete/${id}`, {
+        fetch(`https://boiling-spire-94969.herokuapp.com/delete/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -54,8 +54,8 @@ const ManageProduct = () => {
 
                 {
                     product.map(pd =>
-                        <tbody id="delete">
-                            <tr>
+                        <tbody >
+                            <tr id="delete">
                                 <th scope="row">{pd.name}</th>
                                 <td>{pd.wight}</td>
                                 <td>{pd.price}</td>

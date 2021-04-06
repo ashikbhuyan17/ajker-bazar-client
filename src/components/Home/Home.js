@@ -8,25 +8,13 @@ const Home = () => {
     // const [search, setSearch] = useState()
 
     useEffect(() => {
-        fetch('http://localhost:9000/booking')
+        fetch('https://boiling-spire-94969.herokuapp.com/booking')
             .then(res => res.json())
             .then(data => setProducts(data))
 
     }, [])
 
-    // const handleInput = (event) => {
-    //     setSearch(event.target.value)
-    //     // console.log(event.target.value);
-    // }
-    // console.log(search);
     return (
-        // <div className="row">
-        //     {
-        //         products.map(product => <ShowProduct product={product}></ShowProduct>)
-        //     }
-        // </div>
-
-
         <div>
             <Header />
             {/* 
