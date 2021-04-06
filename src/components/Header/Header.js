@@ -26,7 +26,7 @@ const Header = () => {
                             class="navbar-brand justify-content-center"
                             style={{ color: "#ff8000", textDecoration: "none" }}
                         >
-                            <h3>Ajker-Bazar</h3>
+                            <h3>ajker-bazar</h3>
                         </Link>
                         <button
                             class="navbar-toggler"
@@ -64,7 +64,7 @@ const Header = () => {
 
                                 }
                                 {
-                                    loggedInUser.email ? <Link onClick={() => setLoggedInUser({})} class="nav-link mx-3 bg-danger text-dark extra2"><h4>LogOut</h4></Link>
+                                    loggedInUser.email ? <Link onClick={() => setLoggedInUser({})} class="nav-link mx-3 bg-danger text-dark extra2"><h4>Logout</h4></Link>
                                         : <p></p>
 
                                 }
