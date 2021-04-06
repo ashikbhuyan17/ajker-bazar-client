@@ -43,28 +43,31 @@ const CheckOut = () => {
   }
 
   return (
-    <div className="checkoutContainer">
+    <div>
       <Header />
-      <div className="mainCheckBox">
-        <h1>Checkout</h1>
-        <div className="container checkoutBox">
-          <div className="aboutBox">
-            <h4>Description</h4>
-            <h4>Quantity</h4>
-            <h4>Price</h4>
+      <div className="checkoutContainer">
+
+        <div className="mainCheckBox">
+          <h1>Checkout</h1>
+          <div className="container checkoutBox">
+            <div className="aboutBox">
+              <h4>Description</h4>
+              <h4>Quantity</h4>
+              <h4>Price</h4>
+            </div>
+            <div className="productBox">
+              <h3>{product.name}</h3>
+              <h3>1</h3>
+              <h3>${product.price}</h3>
+            </div>
+            <div className="totalBox">
+              <h3>Total</h3>
+              <h3>${product.price}</h3>
+            </div>
           </div>
-          <div className="productBox">
-            <h3>{product.name}</h3>
-            <h3>1</h3>
-            <h3>${product.price}</h3>
-          </div>
-          <div className="totalBox">
-            <h3>Total</h3>
-            <h3>${product.price}</h3>
-          </div>
+          {/* <button onClick={handleCheckOut} className="submitBtn" type="submit">Checkout</button> */}
+          <button onClick={handleCheckOut} type="button" class="btn btn-success m-2 p-1">CheckOut</button>
         </div>
-        {/* <button onClick={handleCheckOut} className="submitBtn" type="submit">Checkout</button> */}
-        <button onClick={handleCheckOut} type="button" class="btn btn-success m-2 p-1">CheckOut</button>
       </div>
     </div>
   );
