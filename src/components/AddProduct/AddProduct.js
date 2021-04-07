@@ -8,6 +8,7 @@ import Admin from "../Admin/Admin";
 const AddProduct = () => {
     const { register, handleSubmit, watch, errors } = useForm();
     const [imageURL, setImageURL] = useState(null);
+
     const onSubmit = (data, e) => {
         console.log(data)
         const eventDta = {

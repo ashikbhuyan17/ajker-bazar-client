@@ -15,52 +15,55 @@ import NoMatch from "./components/NoMatch/NoMatch";
 
 
 export const UserContext = createContext()
+export const ProductContext = createContext()
 
 function App() {
     const [loggedInUser, setLoggedInUser] = useState({})
+    const [product, setProduct] = useState([])
     console.log('data is ', loggedInUser);
     return (
 
         <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
-
-            <Router>
-                {/* <Header /> */}
-                <Switch>
-                    <Route exact path="/">
-                        <Home />
-                    </Route>
-                    <Route path="/home">
-                        <Home />
-                    </Route>
-                    <Route path="/header">
-                        <Header />
-                    </Route>
-                    <PrivateRoute path="/orders">
-                        <Orders />
-                    </PrivateRoute>
-                    <PrivateRoute path="/admin">
-                        <AddProduct />
-                    </PrivateRoute>
-                    <PrivateRoute path="/addProduct">
-                        <AddProduct />
-                    </PrivateRoute>
-                    <PrivateRoute path="/manageProduct">
-                        <ManageProduct />
-                    </PrivateRoute>
-                    <Route path="/deals">
-                        <Deals />
-                    </Route>
-                    <PrivateRoute path="/checkOut/:id">
-                        <CheckOut />
-                    </PrivateRoute>
-                    <Route path="/login">
-                        <Login />
-                    </Route>
-                    <Route path="*">
-                        <NoMatch />
-                    </Route>
-                </Switch>
-            </Router>
+            <ProductContext.Provider value={[product, setProduct]}>
+                <Router>
+                    {/* <Header /> */}
+                    <Switch>
+                        <Route exact path="/">
+                            <Home />
+                        </Route>
+                        <Route path="/home">
+                            <Home />
+                        </Route>
+                        <Route path="/header">
+                            <Header />
+                        </Route>
+                        <PrivateRoute path="/orders">
+                            <Orders />
+                        </PrivateRoute>
+                        <PrivateRoute path="/admin">
+                            <AddProduct />
+                        </PrivateRoute>
+                        <PrivateRoute path="/addProduct">
+                            <AddProduct />
+                        </PrivateRoute>
+                        <PrivateRoute path="/manageProduct">
+                            <ManageProduct />
+                        </PrivateRoute>
+                        <Route path="/deals">
+                            <Deals />
+                        </Route>
+                        <PrivateRoute path="/checkOut/:id">
+                            <CheckOut />
+                        </PrivateRoute>
+                        <Route path="/login">
+                            <Login />
+                        </Route>
+                        <Route path="*">
+                            <NoMatch />
+                        </Route>
+                    </Switch>
+                </Router>
+            </ProductContext.Provider>
         </UserContext.Provider>
 
     );

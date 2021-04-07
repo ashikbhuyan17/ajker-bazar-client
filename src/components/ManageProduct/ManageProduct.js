@@ -5,11 +5,12 @@ import Delete from '../icons/delete.png'
 import Edit from '../icons/edit.png'
 const ManageProduct = () => {
     const [product, setProduct] = useState([])
+    const [render, setRender] = useState(1);
     useEffect(() => {
         fetch('https://boiling-spire-94969.herokuapp.com/booking')
             .then(res => res.json())
             .then(data => setProduct(data))
-    }, [])
+    }, [render])
 
 
 
@@ -23,10 +24,7 @@ const ManageProduct = () => {
             .then(result => {
                 console.log("deleted successfully")
                 if (result) {
-                    // window.location.reload();
-                    console.log("display none");
-                    document.getElementById('delete').style.display = 'none'
-                    console.log(document.getElementById('delete').style.display = "none");
+                    setRender(render + 1)
                 }
 
             })

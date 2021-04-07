@@ -2,8 +2,9 @@ import React from "react";
 import { useHistory } from "react-router";
 import './ShowProduct.css'
 
-const ShowProduct = ({ product }) => {
-    console.log(product)
+const ShowProduct = ({ pd }) => {
+    console.log(pd)
+    console.log(pd.name);
     let history = useHistory();
     const buyNowHandler = (id) => {
         // console.log(id)
@@ -27,11 +28,11 @@ const ShowProduct = ({ product }) => {
         <div>
 
             <div className="productItem">
-                <img src={product.imageURL} alt="" />
-                <h6>{product.name}</h6>
+                <img src={pd.imageURL} alt="" />
+                <h6>{pd.name}</h6>
                 <div style={{ display: 'flex', justifyContent: "space-between" }}>
-                    <h4 class="my-2">${product.price}</h4>
-                    <button style={{ color: '#fff', background: '#72BA59', border: 'none', borderRadius: '5px' }} onClick={() => buyNowHandler(product._id)}>Buy Now</button>
+                    <h4 class="my-2">${pd.price}</h4>
+                    <button style={{ color: '#fff', background: '#72BA59', border: 'none', borderRadius: '5px' }} onClick={() => buyNowHandler(pd._id)}>Buy Now</button>
                 </div>
             </div>
         </div>
